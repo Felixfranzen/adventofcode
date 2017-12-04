@@ -515,7 +515,7 @@ kebx eild nrskdr meja jxczomh gcne`
 const input = puzzle.split("\n").map((line) => line.split(" "));
 
 
-// Solve puzzle 1
+// Solve task 1
 const res1 = input.reduce((sum, line) => {
   let memo = {}
   let isUnique = true
@@ -538,7 +538,7 @@ const res1 = input.reduce((sum, line) => {
 
 console.log(res1);
 
-// Solve puzzle 2
+// Solve task 2
 // from: https://stackoverflow.com/questions/31128855/comparing-ecma6-sets-for-equality
 function compareSets(a, b){
   return a.size === b.size && [...a].every((value) => b.has(value));
@@ -553,7 +553,7 @@ const res2 = input.reduce((sum, line) => {
       isUnique = false
       return;
     }
-    sets.push(new Set(element));
+    sets.push(es);
   });
 
   if (isUnique){
