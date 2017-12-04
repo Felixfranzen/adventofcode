@@ -61,13 +61,13 @@ let memo = {
 
 function calculateAdjacentSum(row,col, matrix){
   sum = 0;
-  matrix[row] && matrix[row][col+1] ? sum += matrix[row][col+1] : ''
+  matrix[row]   && matrix[row][col+1]   ? sum += matrix[row][col+1]   : ''
+  matrix[row]   && matrix[row][col-1]   ? sum += matrix[row][col-1]   : ''
   matrix[row-1] && matrix[row-1][col+1] ? sum += matrix[row-1][col+1] : ''
-  matrix[row-1] && matrix[row-1][col] ? sum += matrix[row-1][col] : ''
+  matrix[row-1] && matrix[row-1][col]   ? sum += matrix[row-1][col]   : ''
   matrix[row-1] && matrix[row-1][col-1] ? sum += matrix[row-1][col-1] : ''
-  matrix[row] && matrix[row][col-1] ? sum += matrix[row][col-1] : ''
   matrix[row+1] && matrix[row+1][col-1] ? sum += matrix[row+1][col-1] : ''
-  matrix[row+1] && matrix[row+1][col] ? sum += matrix[row+1][col] : ''
+  matrix[row+1] && matrix[row+1][col]   ? sum += matrix[row+1][col]   : ''
   matrix[row+1] && matrix[row+1][col+1] ? sum += matrix[row+1][col+1] : ''
 
   return sum;
@@ -99,10 +99,11 @@ function solve2(input, count, r, c, steps, direction, iterations){
     col += deltas[1]
 
     let adjacentSum = calculateAdjacentSum(row, col, memo)
-    updateMemo(row, col, adjacentSum)
     if (adjacentSum >= input){
       return adjacentSum
     }
+
+    updateMemo(row, col, adjacentSum)
   }
 
   let nextSteps = steps
