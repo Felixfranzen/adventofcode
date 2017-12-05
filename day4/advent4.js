@@ -529,7 +529,7 @@ const res1 = input.reduce((sum, line) => {
   })
 
   if (isUnique){
-    return sum += 1;
+    return sum + 1;
   }
 
   return sum
@@ -557,7 +557,7 @@ const res2 = input.reduce((sum, line) => {
   });
 
   if (isUnique){
-    return sum += 1;
+    return sum + 1;
   }
 
   return sum
