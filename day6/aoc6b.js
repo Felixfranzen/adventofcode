@@ -10,7 +10,7 @@ function findLargestIndex(array){
 }
 
 // Solve task 2 (the first solution is pretty much identical)
-function solve2(input){
+function solve(input){
   let steps = 1;
 
   while(true){
@@ -37,4 +37,4 @@ function solve2(input){
   return steps - memo[input.toString()]
 }
 
-console.log(solve2(input));
+console.log(solve(input));

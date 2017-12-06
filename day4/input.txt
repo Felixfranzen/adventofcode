@@ -1,4 +1,4 @@
-const puzzle = `sayndz zfxlkl attjtww cti sokkmty brx fhh suelqbp
+sayndz zfxlkl attjtww cti sokkmty brx fhh suelqbp
 xmuf znkhaes pggrlp zia znkhaes znkhaes
 nti rxr bogebb zdwrin
 sryookh unrudn zrkz jxhrdo gctlyz
@@ -509,58 +509,4 @@ xle crcuc qkhnv crcuc oedez bjw pmwq
 xzzpiy cjwss jwscs apb bpa
 ydjhhf yeltadb lwi cjdcb ovaox xrdm vkxub
 zax xza admbc lvpzfeh auxn rwasj
-kebx eild nrskdr meja jxczomh gcne`
-
-// Parse input
-const input = puzzle.split("\n").map((line) => line.split(" "));
-
-
-// Solve task 1
-const res1 = input.reduce((sum, line) => {
-  let memo = {}
-  let isUnique = true
-  line.forEach((element) => {
-    if (memo[element]){
-      isUnique = false
-      return
-    }
-
-    memo[element] = true
-  })
-
-  if (isUnique){
-    return sum + 1;
-  }
-
-  return sum
-
-}, 0);
-
-console.log(res1);
-
-// Solve task 2
-// from: https://stackoverflow.com/questions/31128855/comparing-ecma6-sets-for-equality
-function compareSets(a, b){
-  return a.size === b.size && [...a].every((value) => b.has(value));
-}
-
-const res2 = input.reduce((sum, line) => {
-  let sets = []
-  let isUnique = true;
-  line.forEach((element) => {
-    let es = new Set(element);
-    if (!!sets.find((set) => compareSets(es, set))){
-      isUnique = false
-      return;
-    }
-    sets.push(es);
-  });
-
-  if (isUnique){
-    return sum + 1;
-  }
-
-  return sum
-}, 0);
-
-console.log(res2);
+kebx eild nrskdr meja jxczomh gcne
