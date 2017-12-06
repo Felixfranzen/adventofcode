@@ -9,7 +9,7 @@ function solve(input){
     const element = input[i]
     const hasMatch = (i + match) < input.length ? input[i + match] === element : input[(match - (input.length - i))] === element
     if (hasMatch){
-      sum += parseInt(element);
+      sum += element
     }
   }
   return sum;
