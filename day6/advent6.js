@@ -20,8 +20,7 @@ function solve2(input){
     input[index] = 0;
 
     while (blocks > 0){
-      index >= input.length - 1 ? index = -1 : ''
-      index++;
+      index = (index + 1) % input.length
       input[index]++;
       blocks--;
     }
