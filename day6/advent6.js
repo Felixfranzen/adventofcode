@@ -4,8 +4,8 @@ const input = puzzle.split(/\s+/g).map((element) => parseInt(element));
 let memo = {}
 
 function findLargestIndex(array){
-  var max = Math.max(...array);
-  var index = array.indexOf(max);
+  let max = Math.max(...array);
+  let index = array.indexOf(max);
   return index;
 }
 
