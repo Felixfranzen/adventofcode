@@ -4,16 +4,9 @@ const input = puzzle.split(/\s+/g).map((element) => parseInt(element));
 let memo = {}
 
 function findLargestIndex(array){
-  let max = array[0];
-  let maxIndex = 0
-  for (let i = 0; i < array.length; i++){
-    if (array[i] > max){
-      max = array[i];
-      maxIndex = i
-    }
-  }
-
-  return maxIndex;
+  var max = Math.max(...array);
+  var index = array.indexOf(max);
+  return index;
 }
 
 // Solve task 2 (the first solution is pretty much identical)
