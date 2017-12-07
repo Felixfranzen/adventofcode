@@ -36,11 +36,16 @@ function findUnique(sums){
 }
 
 function findSum(parent, input){
+  if (parent.totalWeight){
+    return parent.totalWeight;
+  }
+
   let sum = parent.weight;
   parent.children.forEach((child) => {
     sum += findSum(input[child], input);
   });
 
+  parent.totalWeight = sum;
   return sum;
 }
 
