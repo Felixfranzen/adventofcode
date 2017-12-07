@@ -20,7 +20,7 @@ rows.forEach((row) => {
 // https://stackoverflow.com/questions/2532218/pick-random-property-from-a-javascript-object
 function randomProperty(obj) {
   let keys = Object.keys(obj);
-  return keys[ parseInt(keys.length * Math.random())];
+  return keys[parseInt(keys.length * Math.random())];
 };
 
 
