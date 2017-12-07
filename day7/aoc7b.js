@@ -52,7 +52,6 @@ function solve(parent, input){
 
   let difference = (Math.max(...sums) - Math.min(...sums));
   if (difference > 0){
-    // find unique index
     let index = findUnique(sums);
     let next = input[parent.children[index]]
     let found = solve(next, input);
