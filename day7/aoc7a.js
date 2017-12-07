@@ -17,13 +17,6 @@ rows.forEach((row) => {
   });
 });
 
-// https://stackoverflow.com/questions/2532218/pick-random-property-from-a-javascript-object
-function randomProperty(obj) {
-  let keys = Object.keys(obj);
-  return keys[parseInt(keys.length * Math.random())];
-};
-
-
 function solve(parent, input){
   let newParent = input[parent]
   if (!newParent){
@@ -32,4 +25,4 @@ function solve(parent, input){
   return solve(newParent, input);
 }
 
-console.log(solve(randomProperty(input), input));
+console.log(solve(Object.keys(input)[0], input));
