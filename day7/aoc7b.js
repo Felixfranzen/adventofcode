@@ -63,5 +63,5 @@ function solve(parent, input){
   }
 }
 
-// 'mxke' is the root node accuired from A
+// 'mxke' is the root node acquired from A
 solve(input.mkxke, input);
