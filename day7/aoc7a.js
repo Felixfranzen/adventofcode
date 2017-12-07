@@ -4,13 +4,12 @@ const rows = fs.readFileSync("./input.txt", "utf8").split("\n").map((row) => row
 let input = {}
 
 rows.forEach((row) => {
-  let parent = row[0];
-
   // Is leaf node
   if (row.length == 1){
     return
   }
 
+  let parent = row[0];
   let children = row[1].replace(" ","").split(",");
 
   children.forEach((child) => {
