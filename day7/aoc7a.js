@@ -9,11 +9,11 @@ rows.forEach((row) => {
     return
   }
 
-  let parent = row[0];
+  let parent = row[0].split(" ")[0];
   let children = row[1].replace(" ","").split(",");
 
   children.forEach((child) => {
-    input[child.trim()] = parent.split(" ")[0];
+    input[child.trim()] = parent;
   });
 });
 
