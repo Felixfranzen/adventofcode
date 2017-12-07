@@ -1,14 +1,9 @@
 const fs = require("fs");
-const rows = fs.readFileSync("./input.txt", "utf8").split("\n").map((row) => row.split("->"));
+const rows = fs.readFileSync("./input.txt", "utf8").split("\n").map((row) => row.split("->")).filter((row) => row.length > 1);
 
 let input = {}
 
 rows.forEach((row) => {
-  // Is leaf node
-  if (row.length == 1){
-    return
-  }
-
   let parent = row[0].split(" ")[0];
   let children = row[1].replace(" ","").split(",");
 
