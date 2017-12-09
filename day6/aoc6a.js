@@ -9,7 +9,6 @@ function findLargestIndex(array){
   return index;
 }
 
-// Solve task 2 (the first solution is pretty much identical)
 function solve(input){
   let steps = 1;
 
