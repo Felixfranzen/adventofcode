@@ -29,10 +29,10 @@ const getAdjacent = ([row, col]) => {
   return Set(adjacent.map(co => key(co)))
 }
 
-const findCoordinatesThatShouldFlash = (matrice, flashedCoordinates) => matrice.reduce((accRow, row, rowIndex) => {
+const findCoordinatesThatShouldFlash = (matrice) => matrice.reduce((accRow, row, rowIndex) => {
   const flashingColIndexes = row.reduce((accCol, col, colIndex) => {
     const coordinate = key([rowIndex, colIndex])
-    return col > 9 && !flashedCoordinates.has(coordinate) ? accCol.add(coordinate) : accCol
+    return col > 9 ? accCol.add(coordinate) : accCol
   }, Set())
   return accRow.merge(flashingColIndexes)
 }, Set())
@@ -70,9 +70,8 @@ const runStep = (flashedCoordinates, coordinatesThatShouldFlash, matrice) => {
 const solution = () => {
   const [_, flashes] = range(100).reduce(([matrice, flashes]) => {
     const incrementedMatrice = incrementLevels(matrice)
-    const coordinatesFlashedThisStep = Set()
-    const coordinatesToFlash = findCoordinatesThatShouldFlash(incrementedMatrice, coordinatesFlashedThisStep)
-    const [updatedMatrice, flashesForStep] = runStep(coordinatesFlashedThisStep, coordinatesToFlash, incrementedMatrice)
+    const coordinatesToFlash = findCoordinatesThatShouldFlash(incrementedMatrice)
+    const [updatedMatrice, flashesForStep] = runStep(Set(), coordinatesToFlash, incrementedMatrice)
     return [updatedMatrice, flashes + flashesForStep]
   }, [input, 0])
 
