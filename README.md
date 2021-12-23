@@ -1,2 +1,4 @@
-# adventofcode2017
-Solutions to advent of code problems 2017
+# adventofcode
+JavaScript solutions to various advent of code problems across the years
+
+Some better, some worse, some smart, some stupid. Enjoy!
